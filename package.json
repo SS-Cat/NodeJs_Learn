@@ -1,0 +1,30 @@
+{
+  "name": "NodeJs_Learn",
+  "version": "1.0.0",
+  "description": "Repository for Learn NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SS-Cat/NodeJs_Learn.git"
+  },
+  "keywords": [],
+  "author": "MewMystery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SS-Cat/NodeJs_Learn/issues"
+  },
+  "homepage": "https://github.com/SS-Cat/NodeJs_Learn#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "consign": "^0.1.6",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
