@@ -6,7 +6,7 @@
 
 // /*let rotaformInclusaoNoticia = */require(`./app/routes/formulario_inclusao_noticia`)(app);
 
+/* eslint-disable no-console */
 require(`./config/server`).listen(3000, () => {
-	// eslint-disable-next-line no-console
 	console.log(`Server ON`);
 });

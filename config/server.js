@@ -1,19 +1,22 @@
-const express = require(`express`)();
+const express = require(`express`);
 const consign = require(`consign`);
 const bodyParser = require(`body-parser`);
 const expressValidator = require(`express-validator`);
 
-express.set(`view engine`, `ejs`);
-express.set(`views`, `./app/views`);
+const app = express();
 
-express.use(bodyParser.urlencoded({extended: true}));
-express.use(expressValidator());
+app.set(`view engine`, `ejs`);
+app.set(`views`, `./app/views`);
+
+app.use(express.static(`./app/public`));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressValidator());
 
 consign()
 	.include(`./app/routes`)
 	.then(`./config/dbConnection.js`)
 	.then(`./app/models`)
 	.then(`./app/controllers`)
-	.into(express);
+	.into(app);
 
-module.exports = express;
+module.exports = app;
