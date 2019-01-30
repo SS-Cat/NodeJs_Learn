@@ -1,5 +1,5 @@
 {
-  "name": "NodeJs_Learn",
+  "name": "nodejs_learn",
   "version": "1.0.0",
   "description": "Repository for Learn NodeJs",
   "main": "index.js",
@@ -22,6 +22,7 @@
     "nodemon": "^1.18.9"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "consign": "^0.1.6",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
