@@ -1,52 +1,98 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
 
-<head>
-	<meta charset="utf-8" />
-	<title>Formulário de cadastro de Notícia</title>
-</head>
-
-<body>
-
-
-	<h1>Adicionar notícia</h1>
-
-	<% if(validation) { %>
-		<ul>
-			<% for(const e of validation){ %>
-				<li> <%= e.msg %> </li>
-			<% } %>
-		</ul>
-	<% } %>
-
-	<form action="/noticias/save" method="POST">
-		<div class='form-row'>
-			<label for='titulo'>Name</label>
-			<input id='titulo' name='titulo' type='text' value="<%= noticia.titulo %>"/>
-		</div>
-		<div class='form-row'>
-			<label for='resumo'>Resumo da Notícia</label>
-			<input id='resumo' name='resumo' type='text' value="<%= noticia.resumo %>"/>
-		</div>
-		<div class='form-row'>
-			<label for='autor'>Autor da Notícia</label>
-			<input id='autor' name='autor' type='text' value="<%= noticia.autor %>"/>
-		</div>
+		<title>Portal de notícias</title>
 		
-		<div class='form-row'>
-			<label for='data_noticia'>Data dos Fatos</label>
-			<input id='data_noticia' name='data_noticia' type='date' value="<%= noticia.data_noticia %>"/>
-		</div>
-		<div class='form-row'>
-			<label for='noticia'>Abstract</label>
-			<textarea id='noticia' name='noticia'><%= noticia.noticia %></textarea>
-			<div class='instructions'>Describe your talk in 500 words or less</div>
-		</div>
-		<div class='form-row'>
-			<button type="submit">Submit</button>
-		</div>
-	</form>
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
 
-</body>
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+		<link href="css/style.css" rel="stylesheet">
 
+		<!-- favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico" />
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<img src="images/logo.png" />
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">HOME</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+	    <div class="container">
+			<% if(validation) { %>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="alert alert-danger">
+						<strong>Atenção!</strong>
+						<ul>
+							<% for(const e of validation) { %>
+							<li><%= e.msg %></li>
+							<% } %>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<% } %>
+	    	<div class="row">
+	    		<div class="col-md-12">
+	    			<form action="/formulario_inclusao_noticia" method="POST">
+						<div class="form-group">
+							<label for="titulo">Título:</label>
+							<input type="text" class="form-control" id="titulo" name="titulo">
+						</div>
+
+						<div class="form-group">
+							<label for="pwd">Resumo:</label>
+							<input type="text" class="form-control" id="resumo" name="resumo">
+						</div>
+						
+						<div class="form-group">
+							<label for="pwd">Autor:</label>
+							<input type="text" class="form-control" id="autor" name="autor">
+						</div>
+
+						<div class="form-group">
+							<label for="pwd">Data:</label>
+							<input type="date" class="form-control" id="data_noticia" name="data_noticia">
+						</div>
+
+						<div class="form-group">
+							<label for="pwd">Notícia:</label>
+							<textarea class="form-control" id="noticia" name="noticia"></textarea>
+						</div>
+
+
+						<button type="submit" class="btn btn-default">Cadastrar</button>
+						</form>
+		    	</div>
+	    	</div>
+	    </div>
+	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	</body>
 </html>
