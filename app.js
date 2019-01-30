@@ -1,4 +1,4 @@
-let app = require(`./config/server`);
+// let app = require(`./config/server`);
 
 // /*let rotaHome = */require(`./app/routes/home`)(app);
 
@@ -6,7 +6,7 @@ let app = require(`./config/server`);
 
 // /*let rotaformInclusaoNoticia = */require(`./app/routes/formulario_inclusao_noticia`)(app);
 
-app.listen(3000, () => {
+require(`./config/server`).listen(3000, () => {
 	// eslint-disable-next-line no-console
-	console.log(`Ligado`);
+	console.log(`Server ON`);
 });
